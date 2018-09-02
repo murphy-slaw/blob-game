@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://Puddle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles.tres" type="TileSet" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material" ]
+
+[node name="Puddle" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 795.5, 103.5 )
+droplet_count = 24
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+position = Vector2( 0, 1 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 70, 70 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 3
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 65536, 0, 0, 65548, 0, 0, 65550, 0, 0, 131072, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131086, 0, 0, 196608, 0, 0, 196610, 0, 0, 196620, 0, 0, 196622, 0, 0, 262144, 0, 0, 262156, 0, 0, 262158, 0, 0, 327680, 0, 0, 327684, 0, 0, 327687, 0, 0, 327688, 0, 0, 327694, 0, 0, 393216, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393223, 0, 0, 393224, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393230, 0, 0, 458752, 0, 0, 458756, 0, 0, 458764, 0, 0, 458766, 0, 0, 524288, 0, 0, 524290, 0, 0, 524292, 0, 0, 524294, 0, 0, 524297, 0, 0, 524300, 0, 0, 524302, 0, 0, 589824, 0, 0, 589826, 0, 0, 589836, 0, 0, 589838, 0, 0, 655360, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655369, 0, 0, 655372, 0, 0, 655374, 0, 0, 720896, 0, 0, 720905, 0, 0, 720908, 0, 0, 720910, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+
+

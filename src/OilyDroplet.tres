@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://oily.shader" type="Shader" id=1]
+
+[resource]
+
+render_priority = 0
+shader = ExtResource( 1 )
+shader_param/speed = 4.0
+shader_param/minStrength = 0.01
+shader_param/maxStrength = 0.1
+shader_param/strengthScale = 20.0
+shader_param/interval = 0.1
+shader_param/detail = 1.0
+shader_param/distortion = 0.5
+shader_param/heightOffset = 0.0
+_sections_unfolded = [ "shader_param" ]
+
