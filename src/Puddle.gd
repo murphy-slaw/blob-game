@@ -5,15 +5,15 @@ export var droplet_radius = 12
 var droplets = []
 var gravity = 7
 var speed = 10
-var max_speed = 200
+var max_speed = 350
 var lv = Vector2()
-export var default_surface_tension = 1.0
+export var default_surface_tension = 1.0 setget _set_surface_tension
 var surface_tension = default_surface_tension
-var time = 0
-#func _ready():
-#    for i in range(droplet_count):
-#        spawn_droplet()
-        
+
+func _set_surface_tension(t):
+    surface_tension = t
+    default_surface_tension = t
+
 func spawn_droplet():
         var droplet = Droplet.instance()
         droplet.radius = droplet_radius #+ (4 - randi() % 8)
@@ -30,7 +30,6 @@ func spawn_droplet():
         droplet.global_position += spawn_vec * droplet_radius
     
 func _physics_process(delta):
-    time += delta
     var move = Vector2()
     if Input.is_action_pressed('ui_left'):
         if is_on_wall() and $LeftRay.is_colliding():
@@ -70,5 +69,5 @@ func get_droplets():
                 droplets.append(child)
     return droplets    
     
-func _draw():
-    draw_circle(Vector2(0,0), 64, Color(.1,1,1))
+#func _draw():
+#    draw_circle(Vector2(0,0), 64, Color(.1,1,1))

@@ -10,14 +10,14 @@ radius = 8.0
 [node name="Puddle" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 13
-collision_mask = 13
+collision_layer = 5
+collision_mask = 5
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material" ]
-droplet_count = 50
+_sections_unfolded = [ "Collision", "Material", "collision" ]
+droplet_count = 10
 droplet_radius = 8
-default_surface_tension = 1.0
+default_surface_tension = 0.07
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
