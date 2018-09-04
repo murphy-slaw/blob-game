@@ -5,53 +5,57 @@ export var droplet_radius = 12
 var droplets = []
 var gravity = 7
 var speed = 10
+var max_speed = 200
 var lv = Vector2()
-var default_surface_tension = 5
+export var default_surface_tension = 1.0
 var surface_tension = default_surface_tension
 var time = 0
-func _ready():
-    for i in range(droplet_count):
-        spawn_droplet()
+#func _ready():
+#    for i in range(droplet_count):
+#        spawn_droplet()
         
 func spawn_droplet():
         var droplet = Droplet.instance()
-        droplet.radius = droplet_radius + (4 - randi() % 8)
+        droplet.radius = droplet_radius #+ (4 - randi() % 8)
         add_child(droplet)
-
-func get_nearest_droplet(pos):
-    var nearest = null
-    var min_distance = INF
-    for droplet in get_droplets():
-        var distance = (pos - droplet.position).length()
-        if distance < min_distance:
-            min_distance = distance
-            nearest = droplet
-    return nearest
+        var spawn_vec = Vector2()
+        if is_on_floor():
+            spawn_vec.y -= 1
+        if is_on_wall():
+            if $RightRay.is_colliding():
+                spawn_vec.x -= 1
+            elif $LeftRay.is_colliding():
+                spawn_vec.x += 1
+        droplet.global_position = global_position
+        droplet.global_position += spawn_vec * droplet_radius
     
-func _process(delta):
+func _physics_process(delta):
     time += delta
     var move = Vector2()
     if Input.is_action_pressed('ui_left'):
         if is_on_wall() and $LeftRay.is_colliding():
             move += Vector2(0, -1) * speed
         else:
-            move -= Vector2(1, 0) * speed
+            move -= Vector2(1, 0) * speed * 2
     elif Input.is_action_pressed('ui_right'):
         if is_on_wall() and $RightRay.is_colliding():
-            move += Vector2(0, -1) * speed
+            move += Vector2(0, -1) * speed * 2
         else:
             move += Vector2(1, 0) * speed
     if Input.is_action_pressed('ui_select'):
-        surface_tension = 0
+        for droplet in get_droplets():
+                droplet.radius = lerp(droplet.radius, droplet_radius * 4, 0.1) 
     elif Input.is_action_just_released('ui_select'):
-        surface_tension = default_surface_tension
+        for droplet in get_droplets():
+                droplet.radius = droplet_radius
     var color = Color(.25,0.75,0)
     color.s = abs(lv.normalized().x - lv.normalized().y)
-#    modulate = color
         
     lv += move
-    move_and_slide(lv, Vector2(0, -1), 0, 5, deg2rad(50))
-    lv *= 0.985
+    lv = lv.clamped(max_speed)
+    
+    move_and_slide(lv, Vector2(0, -1), 0)
+    lv *= 0.99
     if not is_on_floor():
         lv += Vector2(0,1) * gravity
         
@@ -63,8 +67,8 @@ func get_droplets():
     var droplets = []
     for child in get_children():
         if child.is_in_group('Droplets'):
-            droplets.append(child)
+                droplets.append(child)
     return droplets    
     
-#func _draw():
-#    draw_circle(Vector2(0,0), 64, Color(.1,1,1))
+func _draw():
+    draw_circle(Vector2(0,0), 64, Color(.1,1,1))

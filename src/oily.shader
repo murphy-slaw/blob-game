@@ -17,21 +17,21 @@ float noise(vec2 p, float ltime)
   return sin(p.x*10.0) * sin(p.y*(3.0 + sin(ltime/11.0))) + .2; 
 }
 
-float getWind(vec2 vertex, vec2 uv, float timer){
-        vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
-        float time = noise(pos, timer) * speed;
-//        float time = timer * speed + pos.x * pos.y;
-        float diff = pow(maxStrength - minStrength, 2);
-        float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
-        float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
-
-        return wind;
-        }
-
-void vertex() {
-        VERTEX.x += getWind(VERTEX, UV, TIME);
-        VERTEX.y += getWind(VERTEX, UV, TIME);
-}
+//float getWind(vec2 vertex, vec2 uv, float timer){
+//        vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
+//        float time = noise(pos, timer) * speed;
+////        float time = timer * speed + pos.x * pos.y;
+//        float diff = pow(maxStrength - minStrength, 2);
+//        float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+//        float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+//
+//        return wind;
+//        }
+//
+//void vertex() {
+//        VERTEX.x += getWind(VERTEX, UV, TIME);
+//        VERTEX.y += getWind(VERTEX, UV, TIME);
+//}
 
 
 mat2 rotate(float angle)

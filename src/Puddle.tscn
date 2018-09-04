@@ -2,21 +2,22 @@
 
 [ext_resource path="res://Puddle.gd" type="Script" id=1]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 16.0
+radius = 8.0
 
-[node name="Puddle" type="KinematicBody2D" index="0"]
+[node name="Puddle" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 13
+collision_mask = 13
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material" ]
 droplet_count = 50
-droplet_radius = 16
+droplet_radius = 8
+default_surface_tension = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
@@ -45,20 +46,20 @@ editor_draw_drag_margin = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="RightRay" type="RayCast2D" parent="." index="2"]
 
 enabled = true
 exclude_parent = true
-cast_to = Vector2( 20, 0 )
-collision_mask = 1025
+cast_to = Vector2( 18, 0 )
+collision_mask = 13
 
 [node name="LeftRay" type="RayCast2D" parent="." index="3"]
 
 enabled = true
 exclude_parent = true
-cast_to = Vector2( -20, 0 )
-collision_mask = 1025
+cast_to = Vector2( -18, 0 )
+collision_mask = 9
 
 

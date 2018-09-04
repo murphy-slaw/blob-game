@@ -16,7 +16,7 @@ void fragment(){
         discard;
     } else {
         float diffuse = max(0.0, dot(normal, cLight));
-        vec4 sample = texture(SCREEN_TEXTURE,SCREEN_UV);
+        vec4 sample = texture(TEXTURE,UV);
         COLOR = vec4(vec3(diffuse), 1.0) * sample;
     }
 }

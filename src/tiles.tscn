@@ -1,22 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Stone elements/elementStone011.png" type="Texture" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 35, 35 )
+[ext_resource path="res://sprites/stones.png" type="Texture" id=1]
 
 [node name="Node2D" type="Node2D"]
 
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="stones0" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+vframes = 4
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 70, 70 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="stones0" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -25,12 +21,335 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones0/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
-disabled = true
-_sections_unfolded = [ "Transform" ]
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, 35, -35, 35 )
+
+[node name="stones1" type="Sprite" parent="." index="1"]
+
+position = Vector2( 70, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2( 70, 0, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones1/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 35, -35, 35, 35, -35, 35 )
+
+[node name="stones2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 140, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 2
+region_enabled = true
+region_rect = Rect2( 140, 0, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, 35, -35, 35 )
+
+[node name="stones4" type="Sprite" parent="." index="3"]
+
+position = Vector2( 0, 70 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 4
+region_enabled = true
+region_rect = Rect2( 0, 70, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones4/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones5" type="Sprite" parent="." index="4"]
+
+position = Vector2( 70, 70 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 5
+region_enabled = true
+region_rect = Rect2( 70, 70, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones5/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones7" type="Sprite" parent="." index="5"]
+
+position = Vector2( 210, 70 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 7
+region_enabled = true
+region_rect = Rect2( 210, 70, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones7" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones7/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones8" type="Sprite" parent="." index="6"]
+
+position = Vector2( 0, 140 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 8
+region_enabled = true
+region_rect = Rect2( 0, 140, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones8" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones8/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones9" type="Sprite" parent="." index="7"]
+
+position = Vector2( 70, 140 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 9
+region_enabled = true
+region_rect = Rect2( 70, 140, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones9" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones9/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones10" type="Sprite" parent="." index="8"]
+
+position = Vector2( 140, 140 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 10
+region_enabled = true
+region_rect = Rect2( 140, 140, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones10" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones10/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones11" type="Sprite" parent="." index="9"]
+
+position = Vector2( 210, 140 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 11
+region_enabled = true
+region_rect = Rect2( 210, 140, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones11" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones11/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones12" type="Sprite" parent="." index="10"]
+
+position = Vector2( 0, 210 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 12
+region_enabled = true
+region_rect = Rect2( 0, 210, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones12" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones12/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones13" type="Sprite" parent="." index="11"]
+
+position = Vector2( 70, 210 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 13
+region_enabled = true
+region_rect = Rect2( 70, 210, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones13" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones13/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones14" type="Sprite" parent="." index="12"]
+
+position = Vector2( 140, 210 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 14
+region_enabled = true
+region_rect = Rect2( 140, 210, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones14" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones14/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
+
+[node name="stones15" type="Sprite" parent="." index="13"]
+
+position = Vector2( 210, 210 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 15
+region_enabled = true
+region_rect = Rect2( 210, 210, 70, 70 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stones15" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stones15/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -35, -35, 35, -35, 35, 35, -35, 35 )
 
 
