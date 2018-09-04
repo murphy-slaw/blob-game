@@ -1,8 +1,6 @@
 extends RigidBody2D
 
 onready var collider = get_node("CollisionShape2D")
-onready var area = get_node("Area2D")
-onready var area_coll = get_node("Area2D/CollisionShape2D")
 onready var parent = get_parent()
 export var radius = 16 setget set_radius
 var default_radius = radius
@@ -26,7 +24,7 @@ func _physics_process(delta):
     apply_impulse(Vector2(), move)
     
     time += delta
-    if time > 0.5:
+    if time > 1:
         var scale_factor = (max_distance - position.length()) / max_distance
         var radius_adjusted = default_radius * clamp(scale_factor, 0.1 ,1)
         if abs(radius - radius_adjusted) > 0.1:
