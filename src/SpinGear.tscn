@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/elementStone011.png" type="Texture" id=1]
+[ext_resource path="res://GearBody.gd" type="Script" id=2]
+[ext_resource path="res://Gear.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 35, 35 )
+
+[node name="SpinGear" type="Node2D"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Base" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Base" index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." index="1"]
+
+position = Vector2( 0, 0.342896 )
+node_a = NodePath("../Base")
+node_b = NodePath("../Gear")
+bias = 0.9
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Gear" type="RigidBody2D" parent="." index="2"]
+
+input_pickable = false
+collision_layer = 4
+collision_mask = 7
+mode = 0
+mass = 1.0
+friction = 0.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Angular", "Collision", "Transform" ]
+
+[node name="Gear2D" parent="Gear" index="0" instance=ExtResource( 3 )]
+
+polygon = PoolVector2Array( 73.9104, 30.6147, 70.5537, 37.7117, 66.5176, 44.4456, 61.8408, 50.7515, 56.5685, 56.5685, 50.7515, 61.8408, 44.4456, 66.5176, 37.7117, 70.5537, 30.6147, 73.9104, 29.1837, 131.808, 21.9639, 133.201, 14.6789, 134.2, 7.35035, 134.8, 8.26637e-15, 135, -7.35035, 134.8, -14.6789, 134.2, -21.9639, 133.201, -29.1837, 131.808, -30.6147, 73.9104, -37.7117, 70.5537, -44.4456, 66.5176, -50.7515, 61.8408, -56.5685, 56.5685, -61.8408, 50.7515, -66.5176, 44.4456, -70.5537, 37.7117, -73.9104, 30.6147, -131.808, 29.1837, -133.201, 21.9639, -134.2, 14.6789, -134.8, 7.35035, -135, 1.65327e-14, -134.8, -7.35035, -134.2, -14.6789, -133.201, -21.9639, -131.808, -29.1837, -73.9104, -30.6147, -70.5537, -37.7117, -66.5176, -44.4456, -61.8408, -50.7515, -56.5685, -56.5685, -50.7515, -61.8408, -44.4456, -66.5176, -37.7117, -70.5537, -30.6147, -73.9104, -29.1837, -131.808, -21.9639, -133.201, -14.6789, -134.2, -7.35035, -134.8, -2.47991e-14, -135, 7.35035, -134.8, 14.6789, -134.2, 21.9639, -133.201, 29.1837, -131.808, 30.6147, -73.9104, 37.7117, -70.5537, 44.4456, -66.5176, 50.7515, -61.8408, 56.5685, -56.5685, 61.8408, -50.7515, 66.5176, -44.4456, 70.5537, -37.7117, 73.9104, -30.6147, 131.808, -29.1837, 133.201, -21.9639, 134.2, -14.6789, 134.8, -7.35035, 135, -3.30655e-14, 134.8, 7.35035, 134.2, 14.6789, 133.201, 21.9639, 131.808, 29.1837 )
+uv = PoolVector2Array( 70.2148, 29.0839, 67.026, 35.8262, 63.1917, 42.2233, 58.7488, 48.2139, 53.7401, 53.7401, 48.2139, 58.7488, 42.2233, 63.1917, 35.8262, 67.026, 29.0839, 70.2148, 27.2263, 70.9558, 20.622, 73.1487, 13.8448, 74.7283, 6.95155, 75.6814, 4.65366e-15, 76, -6.95155, 75.6814, -13.8448, 74.7283, -20.622, 73.1487, -27.2263, 70.9558, -29.0839, 70.2148, -35.8262, 67.026, -42.2233, 63.1917, -48.2139, 58.7488, -53.7401, 53.7401, -58.7488, 48.2139, -63.1917, 42.2233, -67.026, 35.8262, -70.2148, 29.0839, -70.9558, 27.2263, -73.1487, 20.622, -74.7283, 13.8448, -75.6814, 6.95155, -76, 9.30732e-15, -75.6814, -6.95155, -74.7283, -13.8448, -73.1487, -20.622, -70.9558, -27.2263, -70.2148, -29.0839, -67.026, -35.8262, -63.1917, -42.2233, -58.7488, -48.2139, -53.7401, -53.7401, -48.2139, -58.7488, -42.2233, -63.1917, -35.8262, -67.026, -29.0839, -70.2148, -27.2263, -70.9558, -20.622, -73.1487, -13.8448, -74.7283, -6.95155, -75.6814, -1.3961e-14, -76, 6.95155, -75.6814, 13.8448, -74.7283, 20.622, -73.1487, 27.2263, -70.9558, 29.0839, -70.2148, 35.8262, -67.026, 42.2233, -63.1917, 48.2139, -58.7488, 53.7401, -53.7401, 58.7488, -48.2139, 63.1917, -42.2233, 67.026, -35.8262, 70.2148, -29.0839, 70.9558, -27.2263, 73.1487, -20.622, 74.7283, -13.8448, 75.6814, -6.95155, 76, -8.61162e-14, 75.6814, 6.95155, 74.7283, 13.8448, 73.1487, 20.622, 70.9558, 27.2263 )
+color = Color( 0.40666, 0.409808, 0.457031, 1 )
+texture_offset = Vector2( 100, 100 )
+texture_scale = Vector2( 0.35, 0.005 )
+_sections_unfolded = [ "Material", "Texture", "Transform" ]
+chamfer = 4
+radius = 80.0
+tooth_length = 55.0
+num_teeth = 4
+refinement = 8
+start_on_tooth = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gear" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array(  )
+
+[node name="Label" type="Label" parent="Gear" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility" ]
+
+
