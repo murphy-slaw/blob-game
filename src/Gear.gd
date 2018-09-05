@@ -2,13 +2,18 @@ tool
 
 extends Polygon2D
 
-export var chamfer = 2 # degrees tooth edge is narrower than tooth base
+export var chamfer = 2 setget _set_chamfer
 export (float) var radius = 10 setget _set_radius
 export (float) var tooth_length = 2.5 setget _set_tooth_length
 export (int) var num_teeth = 5 setget _set_num_teeth
 export (int) var refinement = 16 setget _set_refinement
 export (bool) var straight_teeth = false setget _set_straight_teeth
 export (bool) var start_on_tooth = false setget _set_start_on_tooth
+
+func _set_chamfer(c):
+    chamfer = c
+    update()
+
 func _set_radius(r):
     radius = r
     update()

@@ -1,0 +1,2113 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/pipe-complete-3x3.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="pipe-complete-3x30" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x30" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x30/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, 24.1136, 32, 24, 0, 16, -16, 0, -24, -16, -16, -24, 0, -23.6354, 32, -32, 32 )
+
+[node name="pipe-complete-3x31" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 1
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x31" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x31/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, 0, -24, -16, -16, -24, 0, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x31/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x32" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 2
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x32" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x32/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x32/StaticBody2D" index="1"]
+
+position = Vector2( -56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="pipe-complete-3x32/StaticBody2D" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x33" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 192, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 3
+region_enabled = true
+region_rect = Rect2( 192, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x33" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x33/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, 24, 32, 24, 0, 16, -16, 0, -24, -32, -24 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="pipe-complete-3x33/StaticBody2D" index="1"]
+
+position = Vector2( -56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x34" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 256, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 4
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x34" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="pipe-complete-3x34/StaticBody2D" index="0"]
+
+position = Vector2( -56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="pipe-complete-3x34/StaticBody2D" index="1"]
+
+position = Vector2( 0, -56 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="pipe-complete-3x34/StaticBody2D" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x35" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 320, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 5
+region_enabled = true
+region_rect = Rect2( 320, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x35" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x35/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="pipe-complete-3x35/StaticBody2D" index="1"]
+
+position = Vector2( -56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x36" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 384, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 6
+region_enabled = true
+region_rect = Rect2( 384, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x36" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x36/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x36/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x37" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 448, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 7
+region_enabled = true
+region_rect = Rect2( 448, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x37" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x37/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x37/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x37/StaticBody2D" index="2"]
+
+position = Vector2( 56, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x38" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 512, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 8
+region_enabled = true
+region_rect = Rect2( 512, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x38" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x38/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, 24, -24, 0, -16, -16, 0, -24, 24, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x39" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 576, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 9
+region_enabled = true
+region_rect = Rect2( 576, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x39" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x39/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x39/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x310" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 640, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 10
+region_enabled = true
+region_rect = Rect2( 640, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x310" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x310/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="pipe-complete-3x311" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 704, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 11
+region_enabled = true
+region_rect = Rect2( 704, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x311" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x311/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, 24, 32, 24, 24, 16, 0, 0, -16, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x312" type="Sprite" parent="." index="12"]
+
+editor/display_folded = true
+position = Vector2( 0, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 12
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x312" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x312/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x312/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x313" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 13
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x313" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x313/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x313/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x313/StaticBody2D" index="2"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x314" type="Sprite" parent="." index="14"]
+
+editor/display_folded = true
+position = Vector2( 128, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 14
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x314" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x314/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x314/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x314/StaticBody2D" index="2"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="pipe-complete-3x314/StaticBody2D" index="3"]
+
+position = Vector2( 56, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x315" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
+position = Vector2( 192, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 15
+region_enabled = true
+region_rect = Rect2( 192, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x315" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x315/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, 32, 24, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x315/StaticBody2D" index="1"]
+
+position = Vector2( -56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x315/StaticBody2D" index="2"]
+
+position = Vector2( -56, 56 )
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x316" type="Sprite" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 256, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 16
+region_enabled = true
+region_rect = Rect2( 256, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x316" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x316/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x316/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x317" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+position = Vector2( 320, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 17
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x317" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x317/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x318" type="Sprite" parent="." index="18"]
+
+editor/display_folded = true
+position = Vector2( 384, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 18
+region_enabled = true
+region_rect = Rect2( 384, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x318" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x318/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x319" type="Sprite" parent="." index="19"]
+
+editor/display_folded = true
+position = Vector2( 448, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 19
+region_enabled = true
+region_rect = Rect2( 448, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x319" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x319/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x319/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x320" type="Sprite" parent="." index="20"]
+
+editor/display_folded = true
+position = Vector2( 512, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 20
+region_enabled = true
+region_rect = Rect2( 512, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x320" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x320/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x321" type="Sprite" parent="." index="21"]
+
+editor/display_folded = true
+position = Vector2( 576, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 21
+region_enabled = true
+region_rect = Rect2( 576, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x321" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x321/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x321/StaticBody2D" index="1"]
+
+position = Vector2( 56, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x322" type="Sprite" parent="." index="22"]
+
+editor/display_folded = true
+position = Vector2( 640, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 22
+region_enabled = true
+region_rect = Rect2( 640, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x322" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x322/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x323" type="Sprite" parent="." index="23"]
+
+editor/display_folded = true
+position = Vector2( 704, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 23
+region_enabled = true
+region_rect = Rect2( 704, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x323" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x323/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x323/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x324" type="Sprite" parent="." index="24"]
+
+editor/display_folded = true
+position = Vector2( 0, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 24
+region_enabled = true
+region_rect = Rect2( 0, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x324" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x324/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 0, -16, 16, 0, 24, 16, 16, 24, 0, 24, -32, 32, -32, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x325" type="Sprite" parent="." index="25"]
+
+editor/display_folded = true
+position = Vector2( 64, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 25
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x325" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x325/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 0, -16, 16, 0, 24, 32, 24, 32, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x325/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x326" type="Sprite" parent="." index="26"]
+
+editor/display_folded = true
+position = Vector2( 128, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 26
+region_enabled = true
+region_rect = Rect2( 128, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x326" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x326/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, 32, 24, 32, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x326/StaticBody2D" index="1"]
+
+position = Vector2( 0, -56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x326/StaticBody2D" index="2"]
+
+position = Vector2( 56, -56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x327" type="Sprite" parent="." index="27"]
+
+editor/display_folded = true
+position = Vector2( 192, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 27
+region_enabled = true
+region_rect = Rect2( 192, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x327" index="0"]
+
+position = Vector2( 0, -8 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x327/StaticBody2D" index="0"]
+
+position = Vector2( 0, 8 )
+build_mode = 0
+polygon = PoolVector2Array( 16, 16, 24, 0, 24, -32, 32, -32, 32, 32, -32, 32, -32, 24, 0, 24 )
+
+[node name="pipe-complete-3x328" type="Sprite" parent="." index="28"]
+
+editor/display_folded = true
+position = Vector2( 256, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 28
+region_enabled = true
+region_rect = Rect2( 256, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x328" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x328/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x328/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x329" type="Sprite" parent="." index="29"]
+
+editor/display_folded = true
+position = Vector2( 320, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 29
+region_enabled = true
+region_rect = Rect2( 320, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x329" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x329/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x330" type="Sprite" parent="." index="30"]
+
+editor/display_folded = true
+position = Vector2( 384, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 30
+region_enabled = true
+region_rect = Rect2( 384, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x330" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x330/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, 24, 32, 24, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x331" type="Sprite" parent="." index="31"]
+
+editor/display_folded = true
+position = Vector2( 448, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 31
+region_enabled = true
+region_rect = Rect2( 448, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x331" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x331/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x331/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x332" type="Sprite" parent="." index="32"]
+
+editor/display_folded = true
+position = Vector2( 512, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 32
+region_enabled = true
+region_rect = Rect2( 512, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x332" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x332/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x332/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x333" type="Sprite" parent="." index="33"]
+
+position = Vector2( 576, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 33
+region_enabled = true
+region_rect = Rect2( 576, 128, 64, 64 )
+
+[node name="pipe-complete-3x334" type="Sprite" parent="." index="34"]
+
+editor/display_folded = true
+position = Vector2( 640, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 34
+region_enabled = true
+region_rect = Rect2( 640, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x334" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x334/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x334/StaticBody2D" index="1"]
+
+position = Vector2( -56, 56 )
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="pipe-complete-3x335" type="Sprite" parent="." index="35"]
+
+editor/display_folded = true
+position = Vector2( 704, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 35
+region_enabled = true
+region_rect = Rect2( 704, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x335" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x335/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, 32, 24, 32 )
+
+[node name="pipe-complete-3x336" type="Sprite" parent="." index="36"]
+
+position = Vector2( 0, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 36
+region_enabled = true
+region_rect = Rect2( 0, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x336" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x336/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x337" type="Sprite" parent="." index="37"]
+
+editor/display_folded = true
+position = Vector2( 64, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 37
+region_enabled = true
+region_rect = Rect2( 64, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x337" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x337/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, 0, -24, -16, -16, -24, 0, -16, 16, 0, 24, 32, 24, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x338" type="Sprite" parent="." index="38"]
+
+editor/display_folded = true
+position = Vector2( 128, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 38
+region_enabled = true
+region_rect = Rect2( 128, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x338" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x338/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x338/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="pipe-complete-3x339" type="Sprite" parent="." index="39"]
+
+editor/display_folded = true
+position = Vector2( 192, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 39
+region_enabled = true
+region_rect = Rect2( 192, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x339" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x339/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32, -32, 24, 8, 24, 16, 16, 24, 0, 16, -16, 8, -24, -32, -24 )
+
+[node name="pipe-complete-3x340" type="Sprite" parent="." index="40"]
+
+editor/display_folded = true
+position = Vector2( 256, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 40
+region_enabled = true
+region_rect = Rect2( 256, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x340" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x340/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x340/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x340/StaticBody2D" index="2"]
+
+position = Vector2( 56, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x341" type="Sprite" parent="." index="41"]
+
+editor/display_folded = true
+position = Vector2( 320, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 41
+region_enabled = true
+region_rect = Rect2( 320, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x341" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x341/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x341/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="pipe-complete-3x342" type="Sprite" parent="." index="42"]
+
+editor/display_folded = true
+position = Vector2( 384, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 42
+region_enabled = true
+region_rect = Rect2( 384, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x342" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x342/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -24, 24, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x342/StaticBody2D" index="1"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, -32, -24 )
+
+[node name="pipe-complete-3x343" type="Sprite" parent="." index="43"]
+
+editor/display_folded = true
+position = Vector2( 448, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 43
+region_enabled = true
+region_rect = Rect2( 448, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x343" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x343/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x343/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="pipe-complete-3x343/StaticBody2D" index="2"]
+
+position = Vector2( 0, 56 )
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x344" type="Sprite" parent="." index="44"]
+
+editor/display_folded = true
+position = Vector2( 512, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 44
+region_enabled = true
+region_rect = Rect2( 512, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x344" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x344/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -16, -16, 0, 0, 16, 16, 24, 32, 24, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x345" type="Sprite" parent="." index="45"]
+
+editor/display_folded = true
+position = Vector2( 576, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 45
+region_enabled = true
+region_rect = Rect2( 576, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x345" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x345/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, 32, 24, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x346" type="Sprite" parent="." index="46"]
+
+editor/display_folded = true
+position = Vector2( 640, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 46
+region_enabled = true
+region_rect = Rect2( 640, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x346" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x346/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x346/StaticBody2D" index="1"]
+
+position = Vector2( 56, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x347" type="Sprite" parent="." index="47"]
+
+editor/display_folded = true
+position = Vector2( 704, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 12
+frame = 47
+region_enabled = true
+region_rect = Rect2( 704, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x347" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x347/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 16, 16, 0, 24, -16, 24, -32, 32, -32, 32, 32, -32, 32, -32, 24, -16, 24 )
+
+[node name="pipe-complete-3x348" type="Sprite" parent="." index="48"]
+
+position = Vector2( 768, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 12
+region_enabled = true
+region_rect = Rect2( 768, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x348" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x348/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 0, 24, 16, 16, 32, -32, 32 )
+
+[node name="pipe-complete-3x349" type="Sprite" parent="." index="49"]
+
+position = Vector2( 832, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 13
+region_enabled = true
+region_rect = Rect2( 832, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x349" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x349/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -24, 16.3648, -24.1824, -16, -8, -32, 0 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x349/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 8, 32, 24, 24, 32, 24, 32, 32 )
+
+[node name="pipe-complete-3x350" type="Sprite" parent="." index="50"]
+
+position = Vector2( 896, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 14
+region_enabled = true
+region_rect = Rect2( 896, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x350" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x350/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, 32, 0, -16, -24, -32, -24 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x350/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -24, 24, -8, 32, -32, 32 )
+
+[node name="pipe-complete-3x351" type="Sprite" parent="." index="51"]
+
+position = Vector2( 960, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 15
+region_enabled = true
+region_rect = Rect2( 960, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x351" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x351/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -16, 32, -32, 0 )
+
+[node name="pipe-complete-3x352" type="Sprite" parent="." index="52"]
+
+position = Vector2( 1024, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 16
+region_enabled = true
+region_rect = Rect2( 1024, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x352" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x352/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 16, 0, 32, -32, 32 )
+
+[node name="pipe-complete-3x353" type="Sprite" parent="." index="53"]
+
+position = Vector2( 1088, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 17
+region_enabled = true
+region_rect = Rect2( 1088, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x353" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x353/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 16, 8, 8, -8, 8, -32, 16 )
+
+[node name="pipe-complete-3x354" type="Sprite" parent="." index="54"]
+
+position = Vector2( 1152, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 18
+region_enabled = true
+region_rect = Rect2( 1152, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x354" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x354/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, 0, 32, -32, 16 )
+
+[node name="pipe-complete-3x355" type="Sprite" parent="." index="55"]
+
+position = Vector2( 768, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 31
+region_enabled = true
+region_rect = Rect2( 768, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x355" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x355/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 16, -32, 8, -8, 8, 8, 16, 32, -32, 32 )
+
+[node name="pipe-complete-3x356" type="Sprite" parent="." index="56"]
+
+position = Vector2( 832, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 32
+region_enabled = true
+region_rect = Rect2( 832, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x356" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x356/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 8, -32, 32, -32, 32, 32, 8, 32, 0, 24, -8, 8, -8, -8, 0, -24 )
+
+[node name="pipe-complete-3x357" type="Sprite" parent="." index="57"]
+
+position = Vector2( 896, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 33
+region_enabled = true
+region_rect = Rect2( 896, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x357" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x357/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -8, -32, 0, -24, 8, -8, 8, 8, 0, 24, -8, 32, -32, 32 )
+
+[node name="pipe-complete-3x358" type="Sprite" parent="." index="58"]
+
+position = Vector2( 960, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 34
+region_enabled = true
+region_rect = Rect2( 960, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x358" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x358/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -32, 32, -32, 32, 32, -16, 32, -8, 8, -8, -8 )
+
+[node name="pipe-complete-3x359" type="Sprite" parent="." index="59"]
+
+position = Vector2( 1024, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 35
+region_enabled = true
+region_rect = Rect2( 1024, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x359" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x359/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 0, -32, -16, -8, -24, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x359/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, 32, 24, 24, 32, 8, 32, 32 )
+
+[node name="pipe-complete-3x360" type="Sprite" parent="." index="60"]
+
+position = Vector2( 1088, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 36
+region_enabled = true
+region_rect = Rect2( 1088, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x360" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x360/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 8, -24, 0, -8, -8, 8, -8, 24, 0, 32, 8, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x361" type="Sprite" parent="." index="61"]
+
+position = Vector2( 1152, 64 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 37
+region_enabled = true
+region_rect = Rect2( 1152, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x361" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x361/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, -32, 32, -32, 32, 32, 24, 32, 16, -8 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x361/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 8, -24, 24, -24, 32, -32, 32 )
+
+[node name="pipe-complete-3x362" type="Sprite" parent="." index="62"]
+
+position = Vector2( 768, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 50
+region_enabled = true
+region_rect = Rect2( 768, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x362" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x362/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 16, -32, 24, -16, 32, 0, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x363" type="Sprite" parent="." index="63"]
+
+position = Vector2( 832, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 51
+region_enabled = true
+region_rect = Rect2( 832, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x363" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x363/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 0, -8, 16, 16, 24, 32, 24, 32, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x363/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 8, -32, 24, -24, 32, -24, 32, -32 )
+
+[node name="pipe-complete-3x364" type="Sprite" parent="." index="64"]
+
+position = Vector2( 896, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 52
+region_enabled = true
+region_rect = Rect2( 896, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x364" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x364/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 24, -16, 24, 8, 16, 32, 0, 32, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x364/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -8, -32, -24, -24, -32, -24 )
+
+[node name="pipe-complete-3x365" type="Sprite" parent="." index="65"]
+
+position = Vector2( 960, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 53
+region_enabled = true
+region_rect = Rect2( 960, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x365" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x365/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, 0, -16.053, -32, 32, -32, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x366" type="Sprite" parent="." index="66"]
+
+position = Vector2( 1024, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 54
+region_enabled = true
+region_rect = Rect2( 1024, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x366" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x366/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -16, 0, 0, 32, -32, 32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pipe-complete-3x366/StaticBody2D" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, -8, 24, -24, 24, -32 )
+
+[node name="pipe-complete-3x367" type="Sprite" parent="." index="67"]
+
+position = Vector2( 1088, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 55
+region_enabled = true
+region_rect = Rect2( 1088, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x367" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x367/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, -8, 23.9097, 0.0902786, 8, 8, -8, 8, -23.6913, 0.308693, -32, -8 )
+
+[node name="pipe-complete-3x368" type="Sprite" parent="." index="68"]
+
+position = Vector2( 1152, 128 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 56
+region_enabled = true
+region_rect = Rect2( 1152, 128, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x368" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x368/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, -32, 32, -32, 32, 32, 0, 32, 16, 8 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="pipe-complete-3x368" index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x368/StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, -24, -32, -24, -24, -32, -8 )
+
+[node name="pipe-complete-3x373" type="Sprite" parent="." index="69"]
+
+position = Vector2( 1024, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 73
+region_enabled = true
+region_rect = Rect2( 1024, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x373" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x373/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 0, -32, 32, -16, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x374" type="Sprite" parent="." index="70"]
+
+position = Vector2( 1088, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 74
+region_enabled = true
+region_rect = Rect2( 1088, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x374" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x374/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -16, -8, -8, 8, -8, 32, -16, 32, 32, -32, 32 )
+
+[node name="pipe-complete-3x375" type="Sprite" parent="." index="71"]
+
+position = Vector2( 1152, 192 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 19
+frame = 75
+region_enabled = true
+region_rect = Rect2( 1152, 192, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pipe-complete-3x375" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pipe-complete-3x375/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -16, 0, -32, 32, -32, 32, 32, -32, 32 )
+
+

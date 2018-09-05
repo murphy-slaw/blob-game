@@ -17,7 +17,9 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "collision" ]
 droplet_count = 10
 droplet_radius = 8
+debug_draw = false
 default_surface_tension = 0.07
+map_path = null
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
