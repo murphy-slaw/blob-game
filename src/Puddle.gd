@@ -7,8 +7,8 @@ export (bool) var debug_draw = false
 var droplets = []
 
 var gravity = 7
-var speed = 15
-var max_speed = 350
+var speed = 10
+var max_speed = 150
 var lv = Vector2()
 
 export var default_surface_tension = 1.0 setget _set_surface_tension
@@ -44,7 +44,7 @@ func get_spawn_point():
     return tile_rect.position + (tile_rect.size * 0.5)
     
 func _physics_process(delta):
-    var move = get_blob_vector().normalized() * 2
+    var move = get_blob_vector().normalized()
     if Input.is_action_pressed('ui_left'):
         if is_on_wall() and $LeftRay.is_colliding():
             move += Vector2(0, -1) * speed
@@ -57,18 +57,20 @@ func _physics_process(delta):
             move += Vector2(1, 0) * speed
     if Input.is_action_pressed('ui_select'):
         for droplet in get_droplets():
-                droplet.radius = lerp(droplet.radius, droplet_radius * 3, 0.1) 
+                surface_tension = 0
+#                droplet.radius = lerp(droplet.radius, droplet_radius * 3, 0.1) 
     elif Input.is_action_just_released('ui_select'):
         for droplet in get_droplets():
-                droplet.radius = droplet_radius
+                surface_tension = default_surface_tension
+#                droplet.radius = droplet_radius
     var color = Color(.25,0.75,0)
     color.s = abs(lv.normalized().x - lv.normalized().y)
         
     lv += move
     lv = lv.clamped(max_speed)
     
-    move_and_slide(lv, Vector2(0, -1), 0)
-    lv *= 0.98
+    move_and_slide(lv, Vector2(0, -1), 0, 8, deg2rad(0))
+    lv *= 0.99
     if not is_on_floor():
         lv += Vector2(0,1) * gravity
         
@@ -80,7 +82,7 @@ func _physics_process(delta):
 func get_blob_vector():
     var blob_vec = Vector2()
     for droplet in get_droplets():
-        blob_vec += droplet.linear_velocity
+        blob_vec += droplet.linear_velocity.normalized()
     return blob_vec
     
 func get_droplets():
@@ -93,6 +95,7 @@ func get_droplets():
 func _draw():
     if not debug_draw:
         return
+    draw_circle(Vector2(), 16, Color(1,0,0))
     var inv = get_global_transform().inverse()
     draw_set_transform_matrix(inv)
     var tile_rect = get_tile_rect()

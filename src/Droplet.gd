@@ -41,7 +41,7 @@ func _set_radius(r):
     radius = r
     if collider and collider.shape:
         collider.shape.radius = radius * 0.3
-    max_distance = r * 30
+    max_distance = r * 20
     update()
     
 func _draw():
