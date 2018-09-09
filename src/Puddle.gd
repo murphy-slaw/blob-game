@@ -24,6 +24,13 @@ func _ready():
     if map_path:
         map = get_node(map_path)
         tile_size = map.cell_size
+    var viewport_size = get_viewport_rect().size * 0.5
+    $Polygon2D.polygon = PoolVector2Array([
+        Vector2(-viewport_size.x, -viewport_size.y),
+        Vector2(viewport_size.x, -viewport_size.y),
+        Vector2(viewport_size.x, viewport_size.y),
+        Vector2(-viewport_size.x, viewport_size.y)
+        ])
 
 func _set_surface_tension(t):
     surface_tension = t
@@ -32,6 +39,7 @@ func _set_surface_tension(t):
 func spawn_droplet():
         var droplet = Droplet.instance()
         droplet.puddle = self
+        droplet.nav = get_node("../Navigation2D")
         droplet.radius = droplet_radius #+ (4 - randi() % 8)
         get_parent().add_child(droplet)
         droplet.global_position = get_spawn_point()
