@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+friction = 0.0
+rough = false
+bounce = 0.0
+absorbent = false
+
+[sub_resource type="PhysicsMaterial" id=2]
+
+friction = 0.0
+rough = false
+bounce = 0.0
+absorbent = true
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+friction = 1.0
+rough = true
+bounce = 0.0
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id=4]
+
+friction = 1.0
+rough = false
+bounce = 1.0
+absorbent = false
+
+[node name="RightValve" type="Node2D"]
+show_behind_parent = true
+_sections_unfolded = [ "Visibility" ]
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2( 0, 44 )
+rotation = 1.5708
+node_a = NodePath("../LowerStop")
+node_b = NodePath("../Gate")
+bias = 0.0
+disable_collision = false
+length = 8.0
+rest_length = 0.0
+stiffness = 35.0
+damping = 0.1
+_sections_unfolded = [ "Transform" ]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( 0, -4 )
+node_a = NodePath("../Hinge")
+node_b = NodePath("../Gate")
+bias = 0.9
+disable_collision = true
+softness = 0.0
+
+[node name="Hinge" type="StaticBody2D" parent="."]
+position = Vector2( 0, -4 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 4
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = SubResource( 1 )
+_sections_unfolded = [ "Collision", "physics_material_override" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hinge"]
+build_mode = 0
+polygon = PoolVector2Array( -4, -4, 4, -4, 4, 4, -4, 4 )
+_sections_unfolded = [ "polygon" ]
+
+[node name="Gate" type="RigidBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -4 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 6
+mode = 0
+mass = 1.0
+physics_material_override = SubResource( 2 )
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+_sections_unfolded = [ "Collision", "physics_material_override" ]
+
+[node name="Polygon2D2" type="Polygon2D" parent="Gate"]
+position = Vector2( 6, -4 )
+polygon = PoolVector2Array( -8, 0, -4, 0, -4, 32, -4, 56, -8, 56, -8, 32 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 0.00784314, 0.0196078, 0.2, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+
+[node name="Gate2" type="RigidBody2D" parent="Gate"]
+input_pickable = false
+collision_layer = 0
+collision_mask = 1
+mode = 3
+mass = 1.0
+physics_material_override = SubResource( 2 )
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+_sections_unfolded = [ "Collision", "physics_material_override" ]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Gate/Gate2"]
+position = Vector2( 6, -4 )
+build_mode = 0
+polygon = PoolVector2Array( -8, 0, -4, 0, -4, 32, -4, 50, -8, 50, -8, 32 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gate"]
+position = Vector2( 6, -4 )
+build_mode = 0
+polygon = PoolVector2Array( -8, 0, -4, 0, -4, 32, -4, 50, -8, 50, -8, 32 )
+
+[node name="LowerStop" type="StaticBody2D" parent="."]
+position = Vector2( 0, 48 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 4
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = SubResource( 3 )
+_sections_unfolded = [ "Collision", "Transform", "physics_material_override" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LowerStop"]
+build_mode = 0
+polygon = PoolVector2Array( -4, -12, -15, -12, -15, 4, -4, 4 )
+_sections_unfolded = [ "polygon" ]
+
+[node name="UpperStop" type="StaticBody2D" parent="."]
+position = Vector2( 36, -4 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 4
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = SubResource( 4 )
+_sections_unfolded = [ "Collision", "Transform", "physics_material_override" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UpperStop"]
+build_mode = 0
+polygon = PoolVector2Array( -4, -4, 4, -4, 4, 4, -4, 4 )
+_sections_unfolded = [ "polygon" ]
+
