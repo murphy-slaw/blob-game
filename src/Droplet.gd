@@ -8,6 +8,7 @@ var max_distance = 300
 var time = 0
 var puddle = Node2D.new()
 var nav = Node2D.new()
+var map = Node2D.new()
 
 func _ready():
     collider.shape.radius = radius * 0.4
@@ -17,14 +18,24 @@ func _physics_process(delta):
     var goal = puddle.position
     nav = get_node("../Navigation2D")
     if nav.has_method('get_simple_path'):
-        var path = nav.get_simple_path(position, goal)
+        var closest = nav.get_closest_point(position)
+        var path = nav.get_simple_path(closest, goal)
         if path:
             goal = path[1]
-    var puddle_vec = position - goal
+    var puddle_vec = position - puddle.position
+    var puddle_distance = puddle_vec.length()
+    var goal_vec = position - goal
+    
+    goal_vec = linear_velocity.normalized() - goal_vec.normalized() * 25
+    
     var move = Vector2()
     if puddle.get('surface_tension'):
-        move -= puddle_vec * puddle.surface_tension
-    apply_impulse(Vector2(), move)
+        if puddle_distance <= 6 * radius:
+            move = goal_vec * puddle.surface_tension
+        else:
+            move = goal_vec
+
+    apply_central_impulse(move)
     
 func set_radius(r):
     default_radius = r
