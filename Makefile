@@ -2,7 +2,7 @@ all: clean build itch
 build: html5 
 html5: 
 	mkdir -p build/html5
-	godot project.godot --path src/ --export "HTML5" ../build/html5/index.html
+	godot3.1 project.godot --path src/ --export "HTML5" ../build/html5/index.html
 
 itch: itch-html5
 itch-html5: 

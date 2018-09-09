@@ -1,28 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Puddle.gd" type="Script" id=1]
+[ext_resource path="res://shaders/metaball.shader" type="Shader" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 16.0
+radius = 8.0
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = ExtResource( 2 )
+shader_param/background = Color( 0.298039, 0.298039, 0.298039, 1 )
+shader_param/TAU = null
+shader_param/MAX_ITER = 5
+_sections_unfolded = [ "shader", "shader_param" ]
 
 [node name="Puddle" type="KinematicBody2D"]
-
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+motion/sync_to_physics = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "collision" ]
 droplet_count = 10
 droplet_radius = 8
 debug_draw = false
+droplet_inertia = 0.1
+speed = 20
+max_speed = 150
 default_surface_tension = 0.07
 map_path = null
 
-[node name="Camera2D" type="Camera2D" parent="." index="0"]
-
+[node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 1
 rotating = false
 current = true
@@ -46,22 +58,42 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+_sections_unfolded = [ "shape" ]
 
-[node name="RightRay" type="RayCast2D" parent="." index="2"]
-
+[node name="RightRay" type="RayCast2D" parent="."]
 enabled = true
 exclude_parent = true
-cast_to = Vector2( 18, 0 )
+cast_to = Vector2( 10, 0 )
 collision_mask = 13
+collide_with_areas = false
+collide_with_bodies = true
 
-[node name="LeftRay" type="RayCast2D" parent="." index="3"]
-
+[node name="LeftRay" type="RayCast2D" parent="."]
 enabled = true
 exclude_parent = true
-cast_to = Vector2( -18, 0 )
+cast_to = Vector2( -10, 0 )
 collision_mask = 9
+collide_with_areas = false
+collide_with_bodies = true
 
+[node name="Polygon2D" type="Polygon2D" parent="."]
+material = SubResource( 2 )
+polygon = PoolVector2Array( -300, -300, 300, -300, 300, 300, -300, 300 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+_sections_unfolded = [ "Material", "material", "polygon" ]
 

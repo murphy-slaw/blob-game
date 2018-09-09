@@ -1,28 +1,31 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://StaticBody2D.gd" type="Script" id=1]
 [ext_resource path="res://RigidBody2D.gd" type="Script" id=2]
 
-[node name="Rack" type="Node2D"]
+[sub_resource type="PhysicsMaterial" id=1]
 
+friction = 0.5
+rough = false
+bounce = 0.0
+absorbent = false
+
+[node name="Rack" type="Node2D"]
 _sections_unfolded = [ "Transform" ]
 
-[node name="post" type="StaticBody2D" parent="." index="0"]
-
+[node name="post" type="StaticBody2D" parent="."]
 input_pickable = false
 collision_layer = 4
 collision_mask = 7
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Polygon2D" type="Polygon2D" parent="post" index="0"]
-
+[node name="Polygon2D" type="Polygon2D" parent="post"]
 polygon = PoolVector2Array( -16, -128, 16, -128, 16, 128, -16, 128 )
 uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
 color = Color( 0.0117647, 0.0235294, 0.2, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
@@ -31,24 +34,23 @@ texture = null
 texture_offset = Vector2( 0, 0 )
 texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
+skeleton = NodePath("")
 invert_enable = false
 invert_border = 100.0
+bones = [  ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="post" index="1"]
-
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="post"]
 build_mode = 0
 polygon = PoolVector2Array(  )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
-
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 16, 68 )
 input_pickable = false
 collision_layer = 4
 collision_mask = 7
 mode = 2
 mass = 10.0
-friction = 0.5
-bounce = 0.0
+physics_material_override = SubResource( 1 )
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
@@ -63,11 +65,11 @@ angular_damp = -1.0
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D" index="0"]
-
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
 position = Vector2( 8, 0 )
 polygon = PoolVector2Array( -48, -68, -36, -68, 96, -20, 96, 60, -36, 60, -48, 60, -64, 56, -64, 48, -48, 44, -48, 32, -64, 28, -64, 20, -48, 16, -48, 4, -64, 0, -64, -8, -48, -12, -48, -24, -64, -28, -64, -36, -48, -40, -48, -51.35, -64, -56, -64, -64 )
 uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
 color = Color( 0.0117647, 0.0235294, 0.2, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
@@ -76,16 +78,16 @@ texture = null
 texture_offset = Vector2( 0, 0 )
 texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
+skeleton = NodePath("")
 invert_enable = false
 invert_border = 100.0
+bones = [  ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" index="1"]
-
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
 build_mode = 0
 polygon = PoolVector2Array(  )
 
-[node name="GrooveJoint2D" type="GrooveJoint2D" parent="." index="2"]
-
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
 position = Vector2( 0, -70 )
 node_a = NodePath("../post")
 node_b = NodePath("../RigidBody2D")
@@ -94,5 +96,4 @@ disable_collision = true
 length = 160.0
 initial_offset = 160.0
 _sections_unfolded = [ "Transform" ]
-
 

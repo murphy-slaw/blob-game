@@ -10,32 +10,25 @@ custom_solver_bias = 0.0
 extents = Vector2( 35, 35 )
 
 [node name="SpinGear" type="Node2D"]
-
 _sections_unfolded = [ "Transform" ]
 
-[node name="Base" type="StaticBody2D" parent="." index="0"]
-
+[node name="Base" type="StaticBody2D" parent="."]
 editor/display_folded = true
 input_pickable = false
 collision_layer = 4
 collision_mask = 0
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="Base" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Base"]
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base" index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 shape = SubResource( 1 )
 
-[node name="PinJoint2D" type="PinJoint2D" parent="." index="1"]
-
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2( 0, 0.342896 )
 node_a = NodePath("../Base")
 node_b = NodePath("../Gear")
@@ -44,15 +37,12 @@ disable_collision = true
 softness = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="Gear" type="RigidBody2D" parent="." index="2"]
-
+[node name="Gear" type="RigidBody2D" parent="."]
 input_pickable = false
 collision_layer = 4
 collision_mask = 6
 mode = 0
 mass = 1.0
-friction = 1.0
-bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
@@ -67,27 +57,24 @@ angular_damp = 0.1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Angular", "Collision", "Transform" ]
 
-[node name="Gear2D" parent="Gear" index="0" instance=ExtResource( 3 )]
-
+[node name="Gear2D" parent="Gear" instance=ExtResource( 3 )]
 polygon = PoolVector2Array( 59.6713, -6.27171, 59.6713, 6.27171, 74.9523, 12.5761, 73.5875, 18.997, 57.0634, 18.541, 51.9615, 30, 63.3571, 41.9747, 59.4987, 47.2853, 44.5887, 40.1478, 35.2671, 48.541, 40.807, 64.1154, 35.1221, 67.3976, 24.4042, 54.8127, 12.4747, 58.6889, 11.2009, 75.1701, 4.67257, 75.8562, 3.67394e-15, 60, -12.4747, 58.6889, -20.3419, 73.2271, -26.5849, 71.1986, -24.4042, 54.8127, -35.2671, 48.541, -48.3674, 58.6225, -53.2456, 54.2301, -44.5887, 40.1478, -51.9615, 30, -68.0297, 33.8815, -70.6997, 27.8847, -57.0634, 18.541, -59.6713, 6.27171, -75.9291, 3.28216, -75.9291, -3.28216, -59.6713, -6.27171, -57.0634, -18.541, -70.6997, -27.8847, -68.0297, -33.8815, -51.9615, -30, -44.5887, -40.1478, -53.2456, -54.2301, -48.3674, -58.6225, -35.2671, -48.541, -24.4042, -54.8127, -26.5849, -71.1986, -20.3419, -73.2271, -12.4747, -58.6889, -1.10218e-14, -60, 4.67257, -75.8562, 11.2009, -75.1701, 12.4747, -58.6889, 24.4042, -54.8127, 35.1221, -67.3976, 40.807, -64.1154, 35.2671, -48.541, 44.5887, -40.1478, 59.4987, -47.2853, 63.3571, -41.9747, 51.9615, -30, 57.0634, -18.541, 73.5875, -18.997, 74.9523, -12.5761 )
 uv = PoolVector2Array( 55.6932, -5.85359, 55.6932, 5.85359, 55.2999, 8.82734, 54.1094, 14.4283, 53.2592, 17.305, 48.4974, 28, 46.9286, 30.5567, 43.5628, 35.1892, 41.6161, 37.4713, 32.916, 45.305, 30.4429, 47.0025, 25.4839, 49.8655, 22.7773, 51.1585, 11.6431, 54.7763, 8.69331, 55.3211, 2.99857, 55.9197, 3.42901e-15, 56, -11.6431, 54.7763, -14.5594, 54.0742, -20.0052, 52.3048, -22.7773, 51.1585, -32.916, 45.305, -35.2946, 43.4774, -39.55, 39.6459, -41.6161, 37.4713, -48.4974, 28, -49.9271, 25.363, -52.2562, 20.1319, -53.2592, 17.305, -55.6932, 5.85359, -55.9268, 2.86306, -55.9268, -2.86306, -55.6932, -5.85359, -53.2592, -17.305, -52.2562, -20.1319, -49.9271, -25.363, -48.4974, -28, -41.6161, -37.4713, -39.55, -39.6459, -35.2946, -43.4774, -32.916, -45.305, -22.7773, -51.1585, -20.0052, -52.3048, -14.5594, -54.0742, -11.6431, -54.7763, -1.0287e-14, -56, 2.99857, -55.9197, 8.69331, -55.3211, 11.6431, -54.7763, 22.7773, -51.1585, 25.4839, -49.8655, 30.4429, -47.0025, 32.916, -45.305, 41.6161, -37.4713, 43.5628, -35.1892, 46.9286, -30.5567, 48.4974, -28, 53.2592, -17.305, 54.1094, -14.4283, 55.2999, -8.82734 )
 color = Color( 0.0117647, 0.0235294, 0.2, 1 )
 texture_offset = Vector2( 100, 100 )
 texture_scale = Vector2( 0.35, 0.005 )
-_sections_unfolded = [ "Material" ]
+_sections_unfolded = [ "Material", "Transform" ]
 chamfer = 6
 radius = 60.0
 tooth_length = 16.0
 num_teeth = 15
 refinement = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gear" index="1"]
-
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gear"]
 build_mode = 0
 polygon = PoolVector2Array(  )
 
-[node name="Label" type="Label" parent="Gear" index="2"]
-
+[node name="Label" type="Label" parent="Gear"]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -105,5 +92,4 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility" ]
-
 
