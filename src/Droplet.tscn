@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Droplet.gd" type="Script" id=1]
-[ext_resource path="res://OilyDroplet.tres" type="Material" id=2]
+[ext_resource path="res://shaders/OilyDroplet.tres" type="Material" id=2]
 [ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=3]
 [ext_resource path="res://Sprite.gd" type="Script" id=4]
+
 
 [sub_resource type="PhysicsMaterial" id=1]
 

@@ -3,10 +3,10 @@
 [ext_resource path="res://pipetest2.gd" type="Script" id=1]
 [ext_resource path="res://Puddle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pipes-manual.tres" type="TileSet" id=3]
-[ext_resource path="res://SpinGear.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Rack.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=6]
-[ext_resource path="res://RightValve.tscn" type="PackedScene" id=7]
+[ext_resource path="res://mechanisms/SpinGear.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mechanisms/Rack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mechanisms/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://mechanisms/RightValve.tscn" type="PackedScene" id=7]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -19,6 +19,7 @@ absorbent = false
 script = ExtResource( 1 )
 
 [node name="Puddle" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 112, 32 )
 collision/safe_margin = 0.001
 droplet_count = 20
@@ -35,7 +36,6 @@ color = Color( 0.298039, 0.298039, 0.298039, 1 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Navigation2D"]
-editor/display_folded = true
 position = Vector2( -1, 0 )
 mode = 0
 tile_set = ExtResource( 3 )
@@ -64,7 +64,7 @@ show_behind_parent = true
 position = Vector2( 416, 160 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Gadget" parent="Navigation2D/TileMap" instance=ExtResource( 5 )]
+[node name="Rack" parent="Navigation2D/TileMap" instance=ExtResource( 5 )]
 show_behind_parent = true
 position = Vector2( 522, 144 )
 _sections_unfolded = [ "Transform", "Visibility" ]

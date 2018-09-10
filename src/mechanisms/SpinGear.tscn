@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/elementStone011.png" type="Texture" id=1]
-[ext_resource path="res://GearBody.gd" type="Script" id=2]
-[ext_resource path="res://Gear.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mechanisms/GearBody.gd" type="Script" id=2]
+[ext_resource path="res://mechanisms/Gear.tscn" type="PackedScene" id=3]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

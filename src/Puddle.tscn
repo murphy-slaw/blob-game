@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Puddle.gd" type="Script" id=1]
 [ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=2]
 [ext_resource path="res://Sprite.gd" type="Script" id=3]
 [ext_resource path="res://shaders/metaball.shader" type="Shader" id=4]
 [ext_resource path="res://shaders/sphere_light.shader" type="Shader" id=5]
-[ext_resource path="res://droplet.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -39,7 +38,6 @@ _sections_unfolded = [ "Collision", "Material", "Transform", "collision" ]
 droplet_count = 10
 droplet_radius = 8
 debug_draw = false
-droplet_inertia = 1.0
 gravity = 7
 speed = 15
 max_speed = 150
@@ -72,6 +70,7 @@ editor_draw_drag_margin = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -107,7 +106,7 @@ collision_mask = 13
 collide_with_areas = false
 collide_with_bodies = true
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="OozeSprite" type="Sprite" parent="."]
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
@@ -132,10 +131,10 @@ invert_border = 100.0
 bones = [  ]
 _sections_unfolded = [ "Material", "material", "polygon" ]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="NucleusSprite" type="Sprite" parent="."]
 material = SubResource( 3 )
-scale = Vector2( 0.0625, 0.0625 )
-texture = ExtResource( 6 )
+scale = Vector2( 0.031, 0.03125 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "material" ]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
