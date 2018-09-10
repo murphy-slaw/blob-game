@@ -5,4 +5,5 @@ default_env.tres
 .DS_Store
 build/
 archive/
+src/addons
 *.import
