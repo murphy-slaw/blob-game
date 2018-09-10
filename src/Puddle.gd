@@ -1,5 +1,81 @@
 extends KinematicBody2D
 
+const StateMachine = preload("res://StateMachine.gd")
+const State = preload("res://State.gd")
+
+class Idle extends "res://State.gd":
+    
+    func _init(object).(object):
+        name = 'idle'
+        
+    func _physics_process(delta):
+        target.lv -= target.position - target.get_blob_center()
+        target.lv += Vector2(0,1) * target.gravity
+        
+    func on_move():
+        return (
+                Input.is_action_pressed('ui_left') or 
+                Input.is_action_pressed('ui_right')
+                ) and target.can_move()
+                
+                
+class MoveState extends "res://State.gd":
+    
+    func _init(object).(object):
+        pass
+    
+    func on_no_input():
+        return not (
+                Input.is_action_pressed('ui_left') or 
+                Input.is_action_pressed('ui_right')
+                )
+                
+    func on_frozen():
+        return not target.can_move()
+    
+    
+class Moving extends MoveState:
+    
+    func _init(object).(object):
+        name = 'moving'
+        
+    func _physics_process(delta):
+        var move = Vector2()
+        var blob_pos = target.get_blob_center()
+        if Input.is_action_pressed('ui_left'):
+            move -= target.position - blob_pos
+            move -= Vector2(1, 0) * target.speed
+        elif Input.is_action_pressed('ui_right'):
+            move -= target.position - blob_pos
+            move += Vector2(1, 0) * target.speed
+            
+        target.lv += move
+            
+    func on_start_climb():
+        return target.is_on_wall() and (
+            target.left_ray.is_colliding() or
+            target.right_ray.is_colliding()
+            )
+            
+   
+class Climbing extends MoveState:
+    
+    func _init(object).(object):
+        name = 'climbing'
+        
+    func _physics_process(delta):
+        var move = Vector2()
+        
+        if ((Input.is_action_pressed('ui_left') and target.left_ray.is_colliding())
+             or (Input.is_action_pressed('ui_right') and target.right_ray.is_colliding())):
+                move += Vector2(0, -1) * target.speed
+        target.lv += move
+                
+    func on_left_wall():
+        return not target.is_on_wall()
+
+var brain = StateMachine.new()
+
 const Droplet = preload('res://Droplet.tscn')
 export var droplet_count = 3
 export var droplet_radius = 12
@@ -22,6 +98,9 @@ export (NodePath) var map_path
 var map
 var tile_size
 
+onready var left_ray = get_node('LeftRay')
+onready var right_ray = get_node('RightRay')
+
 func _ready():
     radius = droplet_radius
     if map_path:
@@ -34,6 +113,24 @@ func _ready():
         Vector2(viewport_size.x, viewport_size.y),
         Vector2(-viewport_size.x, viewport_size.y)
         ])
+    prepare_brain()
+    $Sprite2.update()
+        
+func prepare_brain():
+    brain.add_state(Idle.new(self))
+    brain.add_state(Moving.new(self))
+    brain.add_state(Climbing.new(self))
+    brain.state = 'idle'
+    
+    brain.add_transition('idle', 'on_move', 'moving')
+    
+    brain.add_transition('moving', 'on_no_input', 'idle')
+    brain.add_transition('moving', 'on_start_climb', 'climbing')
+    brain.add_transition('moving', 'on_frozen', 'idle')
+    
+    brain.add_transition('climbing', 'on_no_input', 'idle')
+    brain.add_transition('climbing', 'on_left_wall', 'moving')
+    brain.add_transition('climbing', 'on_frozen', 'idle')
 
 func _set_surface_tension(t):
     surface_tension = t
@@ -60,46 +157,18 @@ func get_spawn_point():
     return tile_rect.position + (tile_rect.size * 0.5)
     
 func _physics_process(delta):
+    
     droplets = get_droplets()
     if droplets.size() < droplet_count:
         spawn_droplet()
-    var move = Vector2()
+   
+    brain.check_transitions()
+    brain._physics_process(delta)
     var speed_cap = max_speed
-    
-    var blob_pos = get_blob_center()
-    
-    if overlapping_droplets.size() > 2:
-        if Input.is_action_pressed('ui_left'):
-            if (is_on_wall() or is_on_ceiling()) and $LeftRay.is_colliding():
-                move += Vector2(0, -1) * speed
-            else:
-                move -= position - blob_pos
-                move -= Vector2(1, 0) * speed
-        elif Input.is_action_pressed('ui_right'):
-            if (is_on_ceiling() or is_on_wall()) and $RightRay.is_colliding():
-                move += Vector2(0, -1) * speed
-            else:
-                move -= position - blob_pos
-                move += Vector2(1, 0) * speed
-        else:
-            lv *= 0.97
-            move -= position - blob_pos
-    else:
-        lv *= 0.97
-        
-    lv += move
     lv = lv.clamped(speed_cap)
-    
     move_and_slide(lv, Vector2(0, -1))
-    if not is_on_floor() and not is_climbing():
-        lv += Vector2(0,1) * gravity
+    lv *= 0.97
  
-func is_climbing():
-    return ( (is_on_ceiling() or is_on_wall()) and 
-            ( ($RightRay.is_colliding() and Input.is_action_pressed('ui_right')) or
-              ($LeftRay.is_colliding() and Input.is_action_pressed('ui_left')) )
-            )
-        
     
 func get_blob_vector():
     var blob_vec = Vector2()
@@ -118,7 +187,10 @@ func get_droplets():
     for child in get_parent().get_children():
         if child.is_in_group('Droplets'):
                 droplets.append(child)
-    return droplets    
+    return droplets  
+    
+func can_move():
+    return overlapping_droplets.size() > 2  
     
 func _draw():
     if not debug_draw:
