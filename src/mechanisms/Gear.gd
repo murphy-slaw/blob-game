@@ -41,7 +41,6 @@ func _set_start_on_tooth(b):
 func update():
     polygon = build_gear(Vector2(), radius, tooth_length, num_teeth)
     uv = build_gear(Vector2(), radius - 4, 0 , num_teeth)
-    var outer_radius = (radius + tooth_length)/2
     if is_inside_tree() and texture:
         var tsize = texture.get_size()
         texture_scale.x = tsize.x / radius / 2
@@ -83,7 +82,7 @@ func build_gear(center, radius, tooth_length, num_teeth=5, ref=refinement):
     if start_on_tooth:
         theta = dtheta / 2
     
-    for i in range(num_teeth):
+    for _i in range(num_teeth):
         var degrees = rad2deg(theta)
         points = add_circle_arc(points, center, radius, degrees, degrees + dtheta_degrees, ref)
         theta += dtheta

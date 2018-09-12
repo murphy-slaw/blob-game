@@ -1,30 +1,30 @@
 extends Object
 class_name State
 
-var transitions = {}
-var target = null
-var name = 'base state'
+var transitions:Dictionary = {}
+var target:Node2D
+var name:String = 'base state'
 
 func _init(object):
     target = object
     
-func enter():
+func enter()->void:
     pass
     
-func exit():
+func exit()->void:
     pass
     
-func _process(delta):
+func _process(_delta:float)->void:
     pass
     
-func _physics_process(delta):
+func _physics_process(_delta:float)->void:
     pass
 
-func add_transition(function, state):
-    transitions[function] = state
+func add_transition(function:String, state_name:String)->void:
+    transitions[function] = state_name
     
-func check_transitions():
+func check_transitions()->String:
     for fname in transitions.keys():
         if call(fname):
-            print('transition %s succeeded' % fname)
             return transitions[fname]
+    return ""

@@ -9,3 +9,6 @@ extends Node2D
 #    $Puddle/Camera2D.limit_right = bounds.end.x
 #    $Puddle/Camera2D.limit_top = bounds.position.y
 #    $Puddle/Camera2D.limit_bottom = bounds.end.y
+
+func _on_Puddle_new_droplet(droplet):
+    add_child(droplet)
