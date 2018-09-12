@@ -9,17 +9,23 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Bubble",
+"language": "GDScript",
+"path": "res://RigidBody2D.gd"
+}, {
 "base": "Object",
 "class": "State",
 "language": "GDScript",
-"path": "res://State.gd"
+"path": "res://StateMachine/State.gd"
 }, {
 "base": "Object",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://StateMachine.gd"
+"path": "res://StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"Bubble": "",
 "State": "",
 "StateMachine": ""
 }
@@ -27,8 +33,13 @@ _global_script_class_icons={
 [application]
 
 config/name="2D Liquid"
-run/main_scene="res://pipetest2.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://main.tscn"
+config/icon="res://sprites/icon.png"
+
+[debug]
+
+gdscript/warnings/treat_warnings_as_errors=true
+gdscript/warnings/unused_class_variable=false
 
 [display]
 

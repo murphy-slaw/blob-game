@@ -1,29 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Puddle.gd" type="Script" id=1]
 [ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=2]
 [ext_resource path="res://Sprite.gd" type="Script" id=3]
-[ext_resource path="res://shaders/metaball.shader" type="Shader" id=4]
-[ext_resource path="res://shaders/sphere_light.shader" type="Shader" id=5]
+[ext_resource path="res://shaders/sphere_light.shader" type="Shader" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 16.0
+radius = 14.0
 
 [sub_resource type="ShaderMaterial" id=2]
 
 render_priority = 0
 shader = ExtResource( 4 )
-shader_param/background = Color( 0.298039, 0.298039, 0.298039, 1 )
-shader_param/TAU = null
-shader_param/MAX_ITER = 5
-_sections_unfolded = [ "shader", "shader_param" ]
-
-[sub_resource type="ShaderMaterial" id=3]
-
-render_priority = 0
-shader = ExtResource( 5 )
 shader_param/Light = Vector3( -1, -1, 1 )
 _sections_unfolded = [ "shader", "shader_param" ]
 
@@ -36,12 +26,14 @@ motion/sync_to_physics = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "collision" ]
 droplet_count = 10
-droplet_radius = 8
-debug_draw = false
-gravity = 7
-speed = 15
-max_speed = 150
+droplet_radius = null
 default_surface_tension = 0.07
+brownian_motion_intensity = null
+debug_draw = false
+center_bias = null
+gravity = null
+speed = null
+max_speed = null
 map_path = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -54,8 +46,8 @@ limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
 limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 smoothing_enabled = false
 smoothing_speed = 5.0
 offset_v = 0.0
@@ -69,7 +61,27 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "shape" ]
+
+[node name="RightRay" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 13
+collide_with_areas = false
+collide_with_bodies = true
+
+[node name="LeftRay" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = false
+cast_to = Vector2( -20, 0 )
+collision_mask = 13
+collide_with_areas = false
+collide_with_bodies = true
+
+[node name="OverlapArea" type="Area2D" parent="."]
 editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -82,29 +94,9 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapArea"]
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "shape" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "shape" ]
-
-[node name="RightRay" type="RayCast2D" parent="."]
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 18, 0 )
-collision_mask = 13
-collide_with_areas = false
-collide_with_bodies = true
-
-[node name="LeftRay" type="RayCast2D" parent="."]
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -18, 0 )
-collision_mask = 13
-collide_with_areas = false
-collide_with_bodies = true
 
 [node name="OozeSprite" type="Sprite" parent="."]
 scale = Vector2( 0.125, 0.125 )
@@ -112,30 +104,11 @@ texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-material = SubResource( 2 )
-polygon = PoolVector2Array( -300, -300, 300, -300, 300, 300, -300, 300 )
-uv = PoolVector2Array(  )
-splits = PoolIntArray(  )
-color = Color( 1, 1, 1, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-skeleton = NodePath("")
-invert_enable = false
-invert_border = 100.0
-bones = [  ]
-_sections_unfolded = [ "Material", "material", "polygon" ]
-
 [node name="NucleusSprite" type="Sprite" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 scale = Vector2( 0.031, 0.03125 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "material" ]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="OverlapArea" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="OverlapArea" to="." method="_on_Area2D_body_exited"]

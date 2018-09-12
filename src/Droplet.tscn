@@ -1,16 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Droplet.gd" type="Script" id=1]
-[ext_resource path="res://shaders/OilyDroplet.tres" type="Material" id=2]
-[ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=3]
-[ext_resource path="res://Sprite.gd" type="Script" id=4]
-
+[ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=2]
+[ext_resource path="res://Sprite.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
 friction = 0.0
 rough = false
-bounce = 0.25
+bounce = 0.1
 absorbent = false
 
 [sub_resource type="CircleShape2D" id=2]
@@ -18,31 +16,30 @@ absorbent = false
 custom_solver_bias = 0.0
 radius = 16.0
 
-[node name="Droplet" type="RigidBody2D" groups=[
-"Droplets",
-]]
+[node name="Droplet" type="RigidBody2D"]
 show_behind_parent = true
 position = Vector2( 0, 3 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 2
-mode = 2
+mode = 0
 mass = 1.0
 physics_material_override = SubResource( 1 )
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 2
 contacts_reported = 4
 contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
-linear_damp = 0.2
+linear_damp = 0.5
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Transform", "Visibility", "collision" ]
-radius = 16
+_sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Transform", "Visibility", "collision", "material", "physics_material_override" ]
+radius = 16.0
+max_impulse = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -52,10 +49,9 @@ _sections_unfolded = [ "Transform" ]
 rect = Rect2( -10, -10, 20, 20 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = ExtResource( 2 )
 use_parent_material = true
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
-_sections_unfolded = [ "Material", "Offset", "Transform", "material", "texture" ]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "material", "texture" ]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
