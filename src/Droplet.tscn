@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Droplet.gd" type="Script" id=1]
-[ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=2]
-[ext_resource path="res://Sprite.gd" type="Script" id=3]
+[ext_resource path="res://shaders/Wobble.tres" type="Material" id=1]
+[ext_resource path="res://Droplet.gd" type="Script" id=2]
+[ext_resource path="res://sprites/white_circle_512.png" type="Texture" id=3]
+[ext_resource path="res://Sprite.gd" type="Script" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
 friction = 0.0
-rough = true
-bounce = 0.1
+rough = false
+bounce = 0.2
 absorbent = false
 
 [sub_resource type="CircleShape2D" id=2]
@@ -18,6 +19,7 @@ radius = 16.0
 
 [node name="Droplet" type="RigidBody2D"]
 show_behind_parent = true
+material = ExtResource( 1 )
 position = Vector2( 0, 3 )
 input_pickable = false
 collision_layer = 2
@@ -36,10 +38,11 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = 0.5
 angular_velocity = 0.0
 angular_damp = -1.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Transform", "Visibility", "collision", "material", "physics_material_override" ]
 radius = 16.0
 max_impulse = 150.0
+debug_draw = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -49,9 +52,10 @@ _sections_unfolded = [ "Transform" ]
 rect = Rect2( -10, -10, 20, 20 )
 
 [node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 1 )
 use_parent_material = true
-texture = ExtResource( 2 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "material", "texture" ]
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Material", "Transform", "material", "texture" ]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -102,7 +102,7 @@ _sections_unfolded = [ "Transform", "shape" ]
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 
 [node name="NucleusSprite" type="Sprite" parent="."]
 material = SubResource( 2 )
