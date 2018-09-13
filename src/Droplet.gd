@@ -26,12 +26,12 @@ func _physics_process(_delta):
     
     update()
     var goal_vec:Vector2 =  (goal - position)
-    var force = goal_vec.length_squared() -  pow(radius, 2) 
+    var force = goal_vec.length_squared() -  2 * pow(radius, 2) 
     goal_vec = goal_vec.normalized() 
     goal_vec *= force
 #    var move:Vector2 = get_random_normal()
     var move:Vector2 = goal_vec * puddle.surface_tension
-    move = move.clamped(15)
+    move = move.clamped(25)
     apply_central_impulse(move)
     
 func get_goal() -> Vector2:

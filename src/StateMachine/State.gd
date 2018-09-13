@@ -26,5 +26,6 @@ func add_transition(function:String, state_name:String)->void:
 func check_transitions()->String:
     for fname in transitions.keys():
         if call(fname):
+            print('transition %s succeeded' % fname)
             return transitions[fname]
     return ""

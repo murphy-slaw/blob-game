@@ -17,6 +17,7 @@ export var center_bias:float = 0.25
 export var gravity:float = 7.0
 export var speed:float = 15.0
 export var max_speed:float = 150.0
+var grace_timer:int = 0
 
 var lv:Vector2 = Vector2()
 var radius:float
@@ -50,19 +51,10 @@ func get_helpers()->void:
     if map_path:
         map = get_node(map_path)
     nav = get_node("../Navigation2D")
-#func _process(_delta)->void:
-#    var enclosing_rect:Rect2 = get_enclosing_rect()
-#    var poly:PoolVector2Array = PoolVector2Array()
-#    var point:Vector2 = Vector2(-enclosing_rect.size.x, -enclosing_rect.size.y) * 0.5
-#    poly.append(point)
-#    point += Vector2(enclosing_rect.size.x, 0)
-#    poly.append(point)
-#    point += Vector2(0, enclosing_rect.size.y)
-#    poly.append(point)
-#    point = Vector2(point.x - enclosing_rect.size.x , point.y)
-#    poly.append(point)
-#    $Polygon2D.polygon = poly
-#    update()
+
+func _process(_delta)->void:
+    if grace_timer > 0:
+        grace_timer -= 1
 
 func _physics_process(_delta)-> void:
     
@@ -98,17 +90,23 @@ func prepare_brain()-> void:
     brain.add_state(Idle.new(self))
     brain.add_state(Moving.new(self))
     brain.add_state(Climbing.new(self))
+    brain.add_state(Grace.new(self))
     brain.state = 'idle'
     
     brain.add_transition('idle', 'on_move', 'moving')
     
+    brain.add_transition('grace', 'on_finished', 'moving')
+    
     brain.add_transition('moving', 'on_no_input', 'idle')
     brain.add_transition('moving', 'on_start_climb', 'climbing')
+    brain.add_transition('moving', 'on_left_ground', 'grace')
     brain.add_transition('moving', 'on_frozen', 'idle')
     
     brain.add_transition('climbing', 'on_no_input', 'idle')
     brain.add_transition('climbing', 'on_left_wall', 'moving')
+    brain.add_transition('climbing', 'on_left_ground', 'grace')
     brain.add_transition('climbing', 'on_frozen', 'idle')
+    
 
 func _set_surface_tension(t)->void:
     surface_tension = t
@@ -172,7 +170,12 @@ func get_droplets()-> Array:
     return droplets  
     
 func can_move()-> bool:
-    return overlapping_droplets.size() > 2
+    return overlapping_droplets.size() > 2 and (
+            is_on_floor() or is_on_wall() or grace_timer)
+            
+func can_climb()->bool:
+    return((Input.is_action_pressed('ui_left') and left_ray.is_colliding())
+             or (Input.is_action_pressed('ui_right') and right_ray.is_colliding()))
 	
 func get_center_bias_vec()->Vector2:
 	return (position - get_blob_center()) * center_bias
@@ -221,6 +224,9 @@ class MoveState extends State:
                 
     func on_frozen():
         return not target.can_move()
+        
+    func on_left_ground():
+        return not (target.grace_timer or target.is_on_floor() or target.is_on_wall())
     
     
 class Moving extends MoveState:
@@ -255,10 +261,20 @@ class Climbing extends MoveState:
     func _physics_process(_delta):
         var move:Vector2 = Vector2()
         
-        if ((Input.is_action_pressed('ui_left') and target.left_ray.is_colliding())
-             or (Input.is_action_pressed('ui_right') and target.right_ray.is_colliding())):
+        if target.can_climb():
                 move += Vector2(0, -1) * target.speed
         target.lv += move
                 
     func on_left_wall():
         return not target.is_on_wall()
+        
+class Grace extends State:
+    
+    func _init(_object).(_object):
+        name = "grace"
+        
+    func enter():
+        target.grace_timer = 3
+        
+    func on_finished():
+        return true

@@ -38,6 +38,7 @@ config/icon="res://sprites/icon.png"
 
 [debug]
 
+settings/stdout/print_fps=true
 gdscript/warnings/treat_warnings_as_errors=true
 gdscript/warnings/unused_class_variable=false
 

@@ -7,7 +7,7 @@
 [sub_resource type="PhysicsMaterial" id=1]
 
 friction = 0.0
-rough = false
+rough = true
 bounce = 0.1
 absorbent = false
 
